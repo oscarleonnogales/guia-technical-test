@@ -1,0 +1,25 @@
+.header {
+	display: flex;
+	flex-direction: column;
+	background-color: black;
+}
+
+.header-content {
+	display: flex;
+	padding: 1em;
+	align-items: center;
+}
+
+.logo-image {
+	max-width: 20vw;
+}
+
+.search-input {
+	margin-left: 200px;
+	padding: 10px 5px;
+	min-width: 400px;
+}
+
+.search-input:focus {
+	outline: 1px solid rgb(250, 76, 6);
+}

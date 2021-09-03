@@ -1,0 +1,29 @@
+.navbar {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 100vw;
+	background-color: rgb(250, 76, 6);
+}
+
+.navbar-list {
+	list-style: none;
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+}
+
+.navbar-button {
+	font-size: 1.3rem;
+	font-weight: bold;
+	color: white;
+	padding: 1rem;
+	background: none;
+	border: none;
+	outline: none;
+}
+
+.navbar-button:hover {
+	background-color: white;
+	color: black;
+}
