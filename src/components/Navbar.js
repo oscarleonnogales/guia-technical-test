@@ -23,11 +23,6 @@ export default function Navbar() {
 							<button className="btn navbar-button">Products</button>
 						</Link>
 					</li>
-					<li>
-						<Link to="/contact">
-							<button className="btn navbar-button">Contact Us</button>
-						</Link>
-					</li>
 				</ul>
 			</div>
 		</nav>

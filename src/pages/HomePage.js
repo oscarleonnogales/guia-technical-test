@@ -7,7 +7,8 @@ export default function HomePage() {
 	return (
 		<>
 			<Header />
-			<div className="page-title">Homepage of Revzilla clone</div>
+			<h1 className="homepage-title">Welcome to Revzilla!</h1>
+			<p className="homepage-paragraph">Click no the products tab in the navigation bar to see our products.</p>
 			<Cart />
 		</>
 	);

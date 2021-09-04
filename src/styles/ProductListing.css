@@ -41,6 +41,10 @@
 	color: blue;
 }
 
+.remove-from-cart {
+	color: red !important;
+}
+
 .btn-add-to-cart:hover {
 	font-weight: bold;
 }

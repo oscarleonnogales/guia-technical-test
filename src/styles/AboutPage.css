@@ -1,5 +1,12 @@
+.about-us-title {
+	font-size: 3rem;
+	text-align: center;
+	margin: 1rem;
+}
+
 .about-us-paragraph {
 	margin: 2rem;
 	font-size: 1.2rem;
 	line-height: 1.7rem;
+	text-align: center;
 }

@@ -12,3 +12,14 @@ body {
 .btn {
 	cursor: pointer;
 }
+
+.homepage-title {
+	font-size: 3rem;
+	text-align: center;
+	margin: 1rem;
+}
+
+.homepage-paragraph {
+	font-size: 1.75rem;
+	text-align: center;
+}
