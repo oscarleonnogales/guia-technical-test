@@ -22,7 +22,6 @@ const products = [
 		image: rf1200,
 		type: 'helmet',
 		msrp: 499,
-		quantity: 0,
 	},
 	{
 		id: uuid(),
@@ -30,7 +29,6 @@ const products = [
 		image: gtair,
 		type: 'helmet',
 		msrp: 599,
-		quantity: 0,
 	},
 	{
 		id: uuid(),
@@ -38,7 +36,6 @@ const products = [
 		image: moto3,
 		type: 'helmet',
 		msrp: 249,
-		quantity: 0,
 	},
 	{
 		id: uuid(),
@@ -46,7 +43,6 @@ const products = [
 		image: xd4,
 		type: 'helmet',
 		msrp: 739,
-		quantity: 0,
 	},
 	{
 		id: uuid(),
@@ -54,7 +50,6 @@ const products = [
 		image: scorpionHelmet,
 		type: 'helmet',
 		msrp: 149,
-		quantity: 0,
 	},
 	{
 		id: uuid(),
@@ -62,7 +57,6 @@ const products = [
 		image: tcxBoots,
 		type: 'boots',
 		msrp: 249,
-		quantity: 0,
 	},
 	{
 		id: uuid(),
@@ -70,7 +64,6 @@ const products = [
 		image: sand3,
 		type: 'jacket',
 		msrp: 399,
-		quantity: 0,
 	},
 	{
 		id: uuid(),
@@ -78,7 +71,6 @@ const products = [
 		image: strength,
 		type: 'jacket',
 		msrp: 199,
-		quantity: 0,
 	},
 	{
 		id: uuid(),
@@ -86,7 +78,6 @@ const products = [
 		image: vertex,
 		type: 'jacket',
 		msrp: 199,
-		quantity: 0,
 	},
 	{
 		id: uuid(),
@@ -94,7 +85,6 @@ const products = [
 		image: daineseRacing,
 		type: 'jacket',
 		msrp: 579,
-		quantity: 0,
 	},
 	{
 		id: uuid(),
@@ -102,7 +92,6 @@ const products = [
 		image: crazy8,
 		type: 'jacket',
 		msrp: 399,
-		quantity: 0,
 	},
 	{
 		id: uuid(),
@@ -110,7 +99,6 @@ const products = [
 		image: sidiAdventure,
 		type: 'boots',
 		msrp: 449,
-		quantity: 0,
 	},
 	{
 		id: uuid(),
@@ -118,7 +106,6 @@ const products = [
 		image: formaboots,
 		type: 'boots',
 		msrp: 239,
-		quantity: 0,
 	},
 	{
 		id: uuid(),
@@ -126,7 +113,6 @@ const products = [
 		image: airboots,
 		type: 'boots',
 		msrp: 269,
-		quantity: 0,
 	},
 	{
 		id: uuid(),
@@ -134,7 +120,6 @@ const products = [
 		image: klawGloves,
 		type: 'gloves',
 		msrp: 54,
-		quantity: 0,
 	},
 ];
 

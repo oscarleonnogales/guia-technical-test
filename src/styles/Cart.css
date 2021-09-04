@@ -72,7 +72,28 @@
 }
 
 .cart-product {
+	position: relative;
 	display: flex;
+}
+
+.cart-product-remove-btn-container {
+	position: absolute;
+	bottom: 1rem;
+	left: 7rem;
+}
+
+.remove-from-cart-btn {
+	font-size: 1rem;
+	background: none;
+	cursor: pointer;
+	border: 1px solid black;
+	padding: 0.25em 0.5em;
+	transition: 0.2s ease-in;
+}
+
+.remove-from-cart-btn:hover {
+	color: rgb(250, 76, 6);
+	border: 1px solid rgb(250, 76, 6);
 }
 
 .cart-subtotal {

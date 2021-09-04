@@ -53,13 +53,13 @@ export default function ProductPage() {
 
 	return (
 		<>
-			<Header></Header>
+			<Header />
 			<div className="products-container">
 				{products.map((product) => {
 					return <ProductListing product={product} key={product.id}></ProductListing>;
 				})}
 			</div>
-			<Cart></Cart>
+			<Cart />
 		</>
 	);
 }

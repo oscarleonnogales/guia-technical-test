@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import ReactDom from 'react-dom';
 import { useSelector, useDispatch } from 'react-redux';
+import { removeFromCart } from '../redux/actions/cart';
 import '../styles/Cart.css';
 import { v4 as uuid } from 'uuid';
 import { closeCart } from '../redux/actions/cartOpen';
@@ -8,21 +9,22 @@ import { closeCart } from '../redux/actions/cartOpen';
 export default function Cart() {
 	const dispatch = useDispatch();
 	const isCartOpen = useSelector((state) => state.cartOpen);
+	const cart = useSelector((state) => state.cart);
+	const [subtotal, setSubtotal] = useState(0);
 
-	function calculateSubtotal() {
-		// return cart.reduce((total, product) => {
-		// 	return (total += product.quantity * product.msrp);
-		// }, 0);
-	}
+	useEffect(() => {
+		const newTotal = cart.reduce((total, product) => {
+			return (total += product.msrp);
+		}, 0);
+		setSubtotal(newTotal);
+	}, [cart]);
 
-	if (!isCartOpen) {
-		console.log('cart is closed');
-		return null;
-	}
+	// Don't render the modal if the state is set to 'closed'
+	if (!isCartOpen) return null;
 
 	return ReactDom.createPortal(
 		<>
-			<div className="overlay" onClick={() => console.log('close cart')}></div>
+			<div className="overlay" onClick={() => dispatch(closeCart())}></div>
 
 			<div className="cart-container">
 				<div>
@@ -33,7 +35,7 @@ export default function Cart() {
 					</div>
 				</div>
 				<div className="cart-products-container">
-					{/* {cart.map((product) => {
+					{cart.map((product) => {
 						return (
 							<div className="cart-product" key={uuid()}>
 								<div className="cart-product-detail">
@@ -41,15 +43,19 @@ export default function Cart() {
 								</div>
 								<div className="cart-product-detail">
 									<div className="cart-product-name">{product.name}</div>
-									<CartCounter product={product} key={uuid()} />
 								</div>
 								<div className="cart-product-detail">
 									<div className="cart-product-msrp">${product.msrp}</div>
 								</div>
+								<div className="cart-product-remove-btn-container">
+									<button className="remove-from-cart-btn" onClick={() => dispatch(removeFromCart(product))}>
+										&times; Remove from cart
+									</button>
+								</div>
 							</div>
 						);
-					})} */}
-					{calculateSubtotal() !== 0 && <div className="cart-subtotal">Subtotal: ${calculateSubtotal()}</div>}
+					})}
+					{subtotal !== 0 && <div className="cart-subtotal">Subtotal: ${subtotal}</div>}
 				</div>
 				<div className="checkout-btn-container">
 					<button className="checkout-btn cart-btn" onClick={() => alert('Coming soon!')}>

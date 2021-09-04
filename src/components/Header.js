@@ -24,7 +24,13 @@ export default function Header() {
 				</div>
 			</div>
 			<Navbar></Navbar>
-			<button onClick={() => dispatch(openCart())} className="open-cart-btn">
+			<button
+				onClick={() => {
+					console.log('trying to open cart');
+					dispatch(openCart());
+				}}
+				className="open-cart-btn"
+			>
 				Open Cart
 			</button>
 		</div>

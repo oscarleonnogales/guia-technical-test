@@ -1,10 +1,11 @@
 import React from 'react';
+import Cart from '../components/Cart';
 import Header from '../components/Header';
 
 export default function AboutPage() {
 	return (
 		<>
-			<Header></Header>
+			<Header />
 			<h1 className="about-us-title">About Us</h1>
 			<div className="about-us-paragraph">
 				Lorem ipsum dolor sit amet consectetur adipisicing elit. Error maxime dolore asperiores commodi molestias saepe
@@ -15,6 +16,7 @@ export default function AboutPage() {
 				perspiciatis neque necessitatibus quas ducimus iste dicta accusamus alias non assumenda porro hic officia!
 				Optio, ducimus assumenda dicta neque officiis repudiandae impedit dolor commodi quibusdam.
 			</div>
+			<Cart />
 		</>
 	);
 }
