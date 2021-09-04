@@ -1,19 +1,12 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import HomePage from './pages/HomePage';
 import ProductPage from './pages/ProductPage';
 import AboutPage from './pages/AboutPage';
 import CheckoutPage from './pages/CheckoutPage';
 import HistoryPage from './pages/HistoryPage';
-import { useSelector } from 'react-redux';
 
 function App() {
-	const cart = useSelector((state) => state.cart);
-
-	useEffect(() => {
-		console.log(cart);
-	}, [cart]);
-
 	return (
 		<BrowserRouter>
 			<Switch>
