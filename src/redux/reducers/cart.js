@@ -4,6 +4,8 @@ const cartReducer = (cart = [], action) => {
 			return [...cart, action.payload];
 		case 'cart/remove':
 			return [...cart.filter((product) => product.id !== action.payload.id)];
+		case 'cart/clear':
+			return [];
 		default:
 			return cart;
 	}

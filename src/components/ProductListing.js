@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { addToCart, removeFromCart } from '../redux/actions/cart';
 import { openCart } from '../redux/actions/cartOpen';
@@ -6,13 +6,12 @@ import '../styles/ProductListing.css';
 
 export default function ProductListing({ product }) {
 	const cart = useSelector((state) => state.cart);
-	const [inCart, setInCart] = useState(false);
 	const dispatch = useDispatch();
 
 	// If already in cart, don't add
 	const attemptToAdd = (product) => {
 		if (!cart.includes(product)) {
-			setInCart(true);
+			// setInCart(true);
 			dispatch(addToCart(product));
 		}
 		dispatch(openCart());
@@ -20,7 +19,7 @@ export default function ProductListing({ product }) {
 
 	const attemptToRemove = (product) => {
 		if (cart.includes(product)) {
-			setInCart(false);
+			// setInCart(false);
 			dispatch(removeFromCart(product));
 		}
 		dispatch(openCart());
@@ -36,7 +35,7 @@ export default function ProductListing({ product }) {
 				${product.msrp}
 				<span className="cents">95</span>
 			</div>
-			{!inCart && (
+			{!cart.includes(product) && (
 				<button
 					onClick={() => {
 						attemptToAdd(product);
@@ -46,7 +45,7 @@ export default function ProductListing({ product }) {
 					Add to cart
 				</button>
 			)}
-			{inCart && (
+			{cart.includes(product) && (
 				<button
 					onClick={() => {
 						attemptToRemove(product);

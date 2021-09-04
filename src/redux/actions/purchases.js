@@ -1,6 +1,6 @@
-export function addToPurchaseHistory(content) {
+export function addToPurchaseHistory(purchase) {
 	return {
 		type: 'purchases/add',
-		payload: content,
+		payload: purchase,
 	};
 }

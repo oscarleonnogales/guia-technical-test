@@ -5,6 +5,7 @@ import { removeFromCart } from '../redux/actions/cart';
 import '../styles/Cart.css';
 import { v4 as uuid } from 'uuid';
 import { closeCart } from '../redux/actions/cartOpen';
+import { Link } from 'react-router-dom';
 
 export default function Cart() {
 	const dispatch = useDispatch();
@@ -58,9 +59,9 @@ export default function Cart() {
 					{subtotal !== 0 && <div className="cart-subtotal">Subtotal: ${subtotal}</div>}
 				</div>
 				<div className="checkout-btn-container">
-					<button className="checkout-btn cart-btn" onClick={() => alert('Coming soon!')}>
-						Checkout
-					</button>
+					<Link to="/checkout">
+						<button className="checkout-btn cart-btn">Checkout</button>
+					</Link>
 				</div>
 				<button className="btn close-cart-btn" onClick={() => dispatch(closeCart())}>
 					&times;

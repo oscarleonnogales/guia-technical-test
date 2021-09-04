@@ -1,0 +1,49 @@
+.checkout-title {
+	font-size: 3rem;
+	text-align: center;
+	margin: 1rem;
+}
+
+.checkout-paragraph {
+	margin: 2rem;
+	font-size: 1.2rem;
+	line-height: 1.7rem;
+	text-align: center;
+}
+
+.checkout-form {
+	max-width: 20rem;
+	margin: auto;
+}
+
+.form-group {
+	display: flex;
+	flex-direction: column;
+	margin: 0.5rem;
+}
+
+.form-group > input {
+	padding: 0.25rem 0.5rem;
+}
+
+.checkout-btn {
+	cursor: pointer;
+	outline: none;
+	border: 1px solid black;
+	padding: 0.25em 0.5em;
+	font-size: 1.15rem;
+	color: black;
+	background: none;
+	transition: 0.2s ease-in;
+	margin: auto;
+}
+
+.checkout-btn:hover {
+	border: 1px solid rgb(250, 76, 6);
+	color: rgb(250, 76, 6);
+}
+
+.btn-container {
+	width: min-content;
+	margin: auto;
+}
