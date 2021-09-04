@@ -1,14 +1,22 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { addToCart } from '../redux/actions/cart';
+import { openCart } from '../redux/actions/cartOpen';
 import '../styles/ProductListing.css';
-import Counter from './Counter';
 
-export default function ProductListing(props) {
-	const [count, setCount] = useState(1);
-	const { product, addToCart } = props;
+export default function ProductListing({ product }) {
+	const cart = useSelector((state) => state.cart);
+	const dispatch = useDispatch();
 
-	function updateCount(newCount) {
-		setCount(newCount);
-	}
+	const attemptToAdd = (product) => {
+		// If already in cart, don't add
+		if (cart.includes(product)) {
+			//prompt use that the product is already in their cart
+		} else {
+			dispatch(addToCart(product));
+			dispatch(openCart());
+		}
+	};
 
 	return (
 		<div className="product">
@@ -20,11 +28,9 @@ export default function ProductListing(props) {
 				${product.msrp}
 				<span className="cents">95</span>
 			</div>
-			<Counter count={count} updateCount={updateCount} />
 			<button
 				onClick={() => {
-					addToCart(product.id, count);
-					setCount(1);
+					attemptToAdd(product);
 				}}
 				className="btn-add-to-cart"
 			>

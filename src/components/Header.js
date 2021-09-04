@@ -1,10 +1,14 @@
 import React from 'react';
 import Navbar from './Navbar';
 import '../styles/Header.css';
+import { useDispatch } from 'react-redux';
+import { openCart } from '../redux/actions/cartOpen';
 import { Link } from 'react-router-dom';
 import logo from '../images/revzilla-logo.png';
 
 export default function Header() {
+	const dispatch = useDispatch();
+
 	return (
 		<div className="header">
 			<div className="header-content">
@@ -20,6 +24,9 @@ export default function Header() {
 				</div>
 			</div>
 			<Navbar></Navbar>
+			<button onClick={() => dispatch(openCart())} className="open-cart-btn">
+				Open Cart
+			</button>
 		</div>
 	);
 }

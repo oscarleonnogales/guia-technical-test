@@ -54,9 +54,6 @@ export default function ProductPage() {
 	return (
 		<>
 			<Header></Header>
-			<button onClick={() => console.log('nothing')} className="open-cart-btn">
-				Open Cart
-			</button>
 			<div className="products-container">
 				{products.map((product) => {
 					return <ProductListing product={product} key={product.id}></ProductListing>;

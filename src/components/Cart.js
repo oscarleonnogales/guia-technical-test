@@ -1,17 +1,24 @@
 import React from 'react';
 import ReactDom from 'react-dom';
+import { useSelector, useDispatch } from 'react-redux';
 import '../styles/Cart.css';
-import CartCounter from './CartCounter';
 import { v4 as uuid } from 'uuid';
+import { closeCart } from '../redux/actions/cartOpen';
 
 export default function Cart() {
+	const dispatch = useDispatch();
+	const isCartOpen = useSelector((state) => state.cartOpen);
+
 	function calculateSubtotal() {
 		// return cart.reduce((total, product) => {
 		// 	return (total += product.quantity * product.msrp);
 		// }, 0);
 	}
 
-	if (true) return null;
+	if (!isCartOpen) {
+		console.log('cart is closed');
+		return null;
+	}
 
 	return ReactDom.createPortal(
 		<>
@@ -49,7 +56,7 @@ export default function Cart() {
 						Checkout
 					</button>
 				</div>
-				<button className="btn close-cart-btn" onClick={() => console.log('closed cart')}>
+				<button className="btn close-cart-btn" onClick={() => dispatch(closeCart())}>
 					&times;
 				</button>
 			</div>
